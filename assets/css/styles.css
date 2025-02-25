@@ -27,6 +27,10 @@
   --accent-color: #007bff; /* Example: Blue for highlights */
   --default-color: #333; /* Example: Dark gray for text */
   --heading-color: #222; /* Example: Darker gray for headings */
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --font-semi: 600;
+  --first-color: #007bff; /* Example color, adjust as needed */
 }
 :root {
   --accent-color: #007bff; /* Example: Blue for highlights */
@@ -259,37 +263,110 @@ img {
 }
 
 /* ===== SKILLS =====*/
-.skills__container {
+
+
+/* Base styles */
+.skills-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Mobile Responsiveness (up to 767px) */
+@media (max-width: 767px) {
+  .skills-section {
+      padding: 10px;
+  }
+
+  h2 {
+      font-size: 1.2rem;
+  }
+
+  .skills-text {
+      font-size: 0.9rem;
+      line-height: 1.8; /* Increased line height for readability */
+      padding: 5px;
+  }
+}
+
+.about__text, .skills-text {
+  max-width: 600px; /* Keeps text readable on larger screens */
+  margin: 0 auto; /* Centers text on larger screens */
+  font-size: 1.1rem; /* Keeps font size consistent */
+  line-height: 1.6; /* Ensures even spacing between lines */
+  text-align: justify; /* Ensures text aligns perfectly */
+  color: #333; /* Adjust text color */
+  padding: 20px; /* Adds spacing */
+  word-wrap: break-word; /* Prevents text from overflowing */
+}
+
+/* Small Screens (Edge-to-Edge Text) */
+@media (max-width: 768px) {
+  .about__text, .skills-text {
+    max-width: 100%; /* Forces full width */
+    margin: 0; /* Removes extra spacing */
+    padding: 10px; /* Reduces padding */
+    text-align: justify; /* Ensures alignment */
+    hyphens: auto; /* Helps break long words */
+  }
+}
+
+
+@media (max-width: 767px) {
+  .container {
+      padding: 10px;
+  }
+
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  h1 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  .skills__subtitle {
+      font-size: 1.2rem;
+      text-align: center;
+  }
+
+  .skills__row {
+      justify-content: center;
+      gap: 0.5rem;
+  }
+
+  .skills__data {
+      flex: auto; /* Allow items to shrink on mobile */
+      padding: 0.3rem 0.8rem;
+      margin-bottom: var(--mb-2);
+  }
+
+  .skills__icon {
+      width: 36px;
+      height: 36px;
+  }
+}
+ .skills__container {
   row-gap: 2rem;
   text-align: center;
 }
 .skills__subtitle {
   margin-bottom: var(--mb-2);
 }
-.skills__text {
-  margin-bottom: var(--mb-4);
-}
-/* .skills__data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  font-weight: var(--font-semi);
-  padding: 0.5rem 1rem;
-  margin-bottom: var(--mb-4);
-  border-radius: 0.5rem;
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15); 
-}
-.skills__icon {
-  font-size: 2rem;
-  margin-right: var(--mb-2);
-  color: var(--first-color);
-}*/
 
-.skills__container {
-  display: flex; /* Already implied by bd-grid, but explicitly setting it */
-  gap: 2rem; /* Space between the skills section and the image */
-}
 
 .skills__list {
   display: flex;
@@ -299,7 +376,7 @@ img {
 
 .skills__row {
   display: flex;
-  gap: 1rem; /* Space between skill items in a row */
+  gap: rem; /* Space between skill items in a row */
   justify-content: flex-start; /* Align items to the start (left) */
 }
 
@@ -327,20 +404,13 @@ img {
 .skills__data {
   min-width: 0; /* Prevents overflow issues with long names */
 }
-.skills__html {
-  width: 95%;
-}
-.skills__css {
-  width: 85%;
-}
-.skills__js {
-  width: 65%;
-}
-.skills__ux {
-  width: 85%;
-}
 .skills__img {
   border-radius: 0.5rem;
+} 
+
+.work-section hr {
+  border: 1px solid var(--first-color);
+  margin-top: 10px;
 }
 
 /* ===== WORK =====*/
